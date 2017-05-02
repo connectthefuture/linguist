@@ -99,20 +99,20 @@ As Linguist is a production dependency for GitHub we have a couple of workflow r
 If you are the current maintainer of this gem:
 
 1. Create a branch for the release: `git checkout -b cut-release-vxx.xx.xx`
-1. Make sure your local dependencies are up to date: `script/bootstrap`
-1. If grammar submodules have not been updated recently, update them: `git submodule update --remote && git commit -a`
-1. Ensure that samples are updated: `bundle exec rake samples`
-1. Ensure that tests are green: `bundle exec rake test`
-1. Bump gem version in `lib/linguist/version.rb`, [like this](https://github.com/github/linguist/commit/8d2ea90a5ba3b2fe6e1508b7155aa4632eea2985).
-1. Make a PR to github/linguist, [like this](https://github.com/github/linguist/pull/1238).
-1. Build a local gem: `bundle exec rake build_gem`
-1. Test the gem:
+2. Make sure your local dependencies are up to date: `script/bootstrap`
+3. If grammar submodules have not been updated recently, update them: `git submodule update --remote && git commit -a`
+4. Ensure that samples are updated: `bundle exec rake samples`
+5. Ensure that tests are green: `bundle exec rake test`
+6. Bump gem version in `lib/linguist/version.rb`, [like this](https://github.com/github/linguist/commit/8d2ea90a5ba3b2fe6e1508b7155aa4632eea2985).
+7. Make a PR to github/linguist, [like this](https://github.com/github/linguist/pull/1238).
+8. Build a local gem: `bundle exec rake build_gem`
+9. Test the gem:
   1. Bump the Gemfile and Gemfile.lock versions for an app which relies on this gem
-  1. Install the new gem locally
-  1. Test behavior locally, branch deploy, whatever needs to happen
-1. Merge github/linguist PR
-1. Tag and push: `git tag vx.xx.xx; git push --tags`
-1. Push to rubygems.org -- `gem push github-linguist-3.0.0.gem`
+  2. Install the new gem locally
+  3. Test behavior locally, branch deploy, whatever needs to happen
+10. Merge github/linguist PR
+11. Tag and push: `git tag vx.xx.xx; git push --tags`
+12. Push to rubygems.org -- `gem push github-linguist-3.0.0.gem`
 
 [grammars]: /grammars.yml
 [languages]: /lib/linguist/languages.yml
